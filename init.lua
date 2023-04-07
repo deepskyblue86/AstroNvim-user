@@ -81,6 +81,9 @@ return {
     vim.cmd [[
     match errorMsg /\s\+$/
     ]]
+    vim.cmd [[
+    NoMatchParen
+    ]]
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
