@@ -69,9 +69,6 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set key bindings
-    vim.keymap.set("n", "<C-s>", ":w!<CR>")
-
     -- :help restore-cursor
     vim.cmd [[
     autocmd BufRead * autocmd FileType <buffer> ++once
