@@ -14,6 +14,14 @@ return {
     config = function()
       vim.g.gitblame_date_format = "%r"
       vim.g.gitblame_message_template = "		// <author>, <date> • <summary> • <sha>"
+
+      -- set the mappings
+      local utils = require "astronvim.utils"
+      utils.set_mappings(astronvim.user_opts("mappings", {
+        n = {
+          ["<leader>go"] = { "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open Commit URL" }
+        }
+      }))
     end,
     lazy = false,
   },
