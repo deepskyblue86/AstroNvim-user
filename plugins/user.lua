@@ -46,4 +46,8 @@ return {
     "lambdalisue/suda.vim",
     lazy = false
   },
+  {
+    "tpope/vim-surround",
+    lazy = false
+  }
 }
