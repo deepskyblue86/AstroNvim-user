@@ -30,7 +30,16 @@ return {
     event = "BufReadPre",
     wants = "nvim-web-devicons",
     cmd = { "TroubleToggle", "Trouble" },
-    config = function() require("trouble").setup { use_diagnostic_signs = true } end,
+    config = function()
+      require("trouble").setup { use_diagnostic_signs = true }
+      -- set the mappings
+      local utils = require "astronvim.utils"
+      utils.set_mappings(astronvim.user_opts("mappings", {
+        n = {
+          ["<leader>tt"] = { "<cmd>TroubleToggle<cr>", desc = "TroubleToggle" }
+        }
+      }))
+    end,
     lazy = false,
   },
   {
