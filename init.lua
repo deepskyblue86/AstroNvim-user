@@ -48,6 +48,9 @@ return {
       --   return true
       -- end
     },
+    capabilities = {
+      offsetEncoding = {"utf-16"}
+    },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
