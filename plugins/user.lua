@@ -49,5 +49,19 @@ return {
   {
     "tpope/vim-surround",
     lazy = false
-  }
+  },
+  {
+    "davvid/telescope-git-grep.nvim",
+    lazy = false,
+    config = function()
+      require('telescope').load_extension('git_grep')
+      -- set the mappings
+      local utils = require "astronvim.utils"
+      utils.set_mappings(astronvim.user_opts("mappings", {
+        n = {
+          ["<leader>fg"] = { function() require("git_grep").live_grep() end, desc = "Git find words" }
+        }
+      }))
+    end
+  },
 }
